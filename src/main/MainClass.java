@@ -1,16 +1,20 @@
+package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import model.beans.Utilisateur;
 
 public class MainClass extends Application{
 
 	private Stage stagePrincipal;
 	private BorderPane conteneurPrincipal;
+	static Utilisateur utilisateurEnCours;
+	
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -20,6 +24,15 @@ public class MainClass extends Application{
 		
 		initialisationConteneurPrincipal();
 		initialisationContenu();
+	}
+	
+	public static Utilisateur getUtilisateurEnCours() {
+		return utilisateurEnCours;
+	}
+
+	
+	public static void setUtilisateurEnCours(Utilisateur user) {
+		utilisateurEnCours = user;
 	}
 	
 	

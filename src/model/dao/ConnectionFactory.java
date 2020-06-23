@@ -24,6 +24,7 @@ public class ConnectionFactory {
 			  } catch (Exception e) {
 					  e.printStackTrace();
 			  }
+		  System.out.println("Connexion effectuee avec succès");
 		  return connect;
 	  }
 }

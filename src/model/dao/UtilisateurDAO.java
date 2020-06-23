@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import model.beans.Groupe;
 import model.beans.Utilisateur;
 
 public class UtilisateurDAO extends DAO<Utilisateur>{
@@ -13,17 +14,21 @@ public class UtilisateurDAO extends DAO<Utilisateur>{
 	public UtilisateurDAO(Connection conn) {
 		super(conn);
 	}
-	
+	@Override
 	public void create(Utilisateur obj) {
 		PreparedStatement state;
+		GroupeDAO groupDao = new GroupeDAO(ConnectionFactory.getInstance());
 		try {
 			state = ConnectionFactory.getInstance().prepareStatement("INSERT INTO public.utilisateur("
 					+"adresse_mail, password, nom, prenom) "
-					+"VALUES (?, ?, ?, ?, ?);");
+					+"VALUES (?, ?, ?, ?);");
 			state.setString(1, obj.getAdresseMail());
 			state.setString(2, obj.getPassword());
 			state.setString(3, obj.getNom());
 			state.setString(4, obj.getPrenom());
+			groupDao.create(new Groupe(obj.getNom()));
+			state.execute();
+			ConnectionFactory.getInstance().close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -70,7 +75,7 @@ public class UtilisateurDAO extends DAO<Utilisateur>{
 	public  Utilisateur find(int id) {
 		Utilisateur utilisateur = new Utilisateur();
 		try {
-			ResultSet result = ConnectionFactory.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("DELETE FROM public.utilisateur"
+			ResultSet result = ConnectionFactory.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM public.utilisateur"
 					+"	WHERE id = "+id);
 			if (result.first())
 				utilisateur = new Utilisateur(result.getInt("id"), result.getString("adresse_mail"), result.getString("nom"), result.getString("prenom"), result.getString("password"));
@@ -86,7 +91,7 @@ public class UtilisateurDAO extends DAO<Utilisateur>{
 	
 		Utilisateur utilisateur = new Utilisateur();
 		try {
-			ResultSet result = ConnectionFactory.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("DELETE FROM public.utilisateur"
+			ResultSet result = ConnectionFactory.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM public.utilisateur"
 					+"	WHERE upper(nom) LIKE "+nom.toUpperCase()+"%");
 			if (result.first())
 				utilisateur = new Utilisateur(result.getInt("id"), result.getString("adresse_mail"), result.getString("nom"), result.getString("prenom"), result.getString("password"));
@@ -102,7 +107,7 @@ public class UtilisateurDAO extends DAO<Utilisateur>{
 		
 		Utilisateur utilisateur = new Utilisateur();
 		try {
-			ResultSet result = ConnectionFactory.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("DELETE FROM public.utilisateur"
+			ResultSet result = ConnectionFactory.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM public.utilisateur"
 					+"	WHERE upper(prenom) LIKE " + prenom.toUpperCase()+"%");
 			if (result.first())
 				utilisateur = new Utilisateur(result.getInt("id"), result.getString("adresse_mail"), result.getString("nom"), result.getString("prenom"), result.getString("password"));

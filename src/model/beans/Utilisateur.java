@@ -24,6 +24,14 @@ public class Utilisateur {
 		this.password = password;
 
 	}
+	
+	public Utilisateur( String adresseMail, String nom, String prenom, String password) {
+		this.adresseMail = adresseMail;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.password = password;
+
+	}
 
 	public Utilisateur() {this(0,"","","","");}
 	

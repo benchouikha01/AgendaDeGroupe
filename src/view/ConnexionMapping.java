@@ -15,6 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.MainClass;
 import model.beans.Utilisateur;
 import model.dao.UtilisateurDAO;
 
@@ -95,9 +96,10 @@ public class ConnexionMapping {
 	public void seConnecter(ActionEvent event) throws IOException {
 		
 		if (controlerFormulaire()) {
+			MainClass.setUtilisateurEnCours(UtilisateurDAO.findUserByMail(mailConnection.getText()));
 	        ((Node)(event.getSource())).getScene().getWindow().hide();
 	        Stage primaryStage = new Stage();
-	        Parent root = FXMLLoader.load(getClass().getResource("/view/choix.fxml"));
+	        Parent root = FXMLLoader.load(getClass().getResource("/view/agenda.fxml"));
 	        Scene scene = new Scene(root);
 	        //scene.setFill(Color.TRANSPARENT);
 	        primaryStage.setScene(scene);

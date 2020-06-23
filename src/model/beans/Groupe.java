@@ -10,6 +10,10 @@ public class Groupe {
 		this.nom = nom;
 	}
 	
+	public Groupe( String nom) {
+		this.nom = nom;
+	}
+	
 	public Groupe() {
 		this(0, "");
 		

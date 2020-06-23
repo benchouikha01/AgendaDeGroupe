@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="602.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="602.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AgendaMapping">
    <children>
       <AnchorPane prefHeight="602.0" prefWidth="733.0" style="-fx-background-color: #d1d5ea;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -26,7 +26,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="86.0" prefWidth="182.0" text="Profil" GridPane.columnIndex="1">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchAgendaProfil" prefHeight="86.0" prefWidth="182.0" text="Profil" GridPane.columnIndex="1">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
@@ -60,9 +60,9 @@
                   <Font name="Berlin Sans FB" size="36.0" />
                </font>
             </Label>
-            <Line endX="382.5" endY="-5.5" layoutX="256.0" layoutY="537.0" startX="-193.0" startY="1.0" stroke="#1b3bae" strokeWidth="3.0" />
-            <Line endX="68.0" endY="207.0" layoutX="571.0" layoutY="324.0" startX="68.0" startY="-216.0" stroke="#1b3bae" strokeWidth="3.0" />
-            <Line endX="286.5" layoutX="352.0" layoutY="109.0" startX="-288.0" stroke="#1b3bae" strokeWidth="3.0" />
+            <Line endX="382.5" endY="-5.5" layoutX="256.0" layoutY="544.0" startX="-191.5" startY="-5.5" stroke="#1b3bae" strokeWidth="3.0" />
+            <Line endX="68.0" endY="213.0" layoutX="571.0" layoutY="324.0" startX="68.0" startY="-216.5" stroke="#1b3bae" strokeWidth="3.0" />
+            <Line endX="288.5" layoutX="352.0" layoutY="109.0" startX="-288.0" stroke="#1b3bae" strokeWidth="3.0" />
             <Button layoutX="577.0" layoutY="124.0" mnemonicParsing="false" text="Année" />
             <Button layoutX="527.0" layoutY="124.0" mnemonicParsing="false" text="Mois" />
             <Button layoutX="480.0" layoutY="124.0" mnemonicParsing="false" text="Jour" />

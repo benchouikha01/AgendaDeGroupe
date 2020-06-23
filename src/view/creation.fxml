@@ -41,12 +41,12 @@
                   <Font name="Berlin Sans FB" size="23.0" />
                </font>
             </Label>
-            <TextField layoutX="309.0" layoutY="130.0" prefHeight="25.0" prefWidth="207.0" />
-            <TextField layoutX="309.0" layoutY="200.0" prefHeight="25.0" prefWidth="207.0" />
-            <TextField layoutX="309.0" layoutY="257.0" prefHeight="25.0" prefWidth="207.0" />
-            <PasswordField layoutX="309.0" layoutY="329.0" prefHeight="25.0" prefWidth="207.0" />
-            <PasswordField layoutX="312.0" layoutY="405.0" prefHeight="25.0" prefWidth="207.0" />
-            <Button layoutX="590.0" layoutY="451.0" mnemonicParsing="false" text="Créer">
+            <TextField fx:id="nomCreation" layoutX="309.0" layoutY="130.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="prenomCreation" layoutX="309.0" layoutY="200.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="mailCreation" layoutX="309.0" layoutY="257.0" prefHeight="25.0" prefWidth="207.0" />
+            <PasswordField fx:id="passwordCreation" layoutX="309.0" layoutY="329.0" prefHeight="25.0" prefWidth="207.0" />
+            <PasswordField fx:id="passwordConfirmCreation" layoutX="312.0" layoutY="405.0" prefHeight="25.0" prefWidth="207.0" />
+            <Button layoutX="590.0" layoutY="451.0" mnemonicParsing="false" onAction="#creerCompte" text="Créer">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>

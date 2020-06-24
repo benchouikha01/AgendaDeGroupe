@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="602.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CongeMapping">
+   <children>
+      <AnchorPane layoutX="-39.0" layoutY="-66.0" prefHeight="602.0" prefWidth="733.0" style="-fx-background-color: #d1d5ea;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane layoutX="63.0" layoutY="110.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="428.0" prefWidth="139.0">
+              <columnConstraints>
+                <ColumnConstraints />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchCongeProfil" prefHeight="86.0" prefWidth="182.0" text="Profil" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchCongeGroupe" prefHeight="86.0" prefWidth="164.0" text="Groupe" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchCongeReunion" prefHeight="85.0" prefWidth="189.0" text="Réunion" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="85.0" prefWidth="200.0" text="Congé" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchCongeAgenda" prefHeight="86.0" prefWidth="185.0" text="Agenda" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <Line endX="4.29290771484375" endY="356.0" layoutX="198.0" layoutY="181.0" startX="4.29290771484375" startY="-69.0" stroke="#1b3bae" strokeWidth="3.0" />
+            <Line endX="-100.0" endY="287.0" layoutX="163.0" layoutY="251.0" startX="-100.0" startY="-141.0" stroke="#1b3bae" strokeWidth="3.0" />
+            <Label layoutX="266.0" layoutY="39.0" text="Mon congé" textFill="#6460bc">
+               <font>
+                  <Font name="Berlin Sans FB" size="36.0" />
+               </font>
+            </Label>
+            <Line endX="382.5" endY="-5.5" layoutX="256.0" layoutY="537.0" startX="-193.0" startY="1.0" stroke="#1b3bae" strokeWidth="3.0" />
+            <Line endX="68.0" endY="207.0" layoutX="571.0" layoutY="324.0" startX="68.0" startY="-216.0" stroke="#1b3bae" strokeWidth="3.0" />
+            <Line endX="286.5" layoutX="352.0" layoutY="109.0" startX="-288.0" stroke="#1b3bae" strokeWidth="3.0" />
+            <Label layoutX="225.0" layoutY="184.0" prefHeight="27.0" prefWidth="123.0" text="Date début">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="226.0" layoutY="244.0" prefHeight="27.0" prefWidth="123.0" text="Date fin">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateDebutConge" layoutX="421.0" layoutY="179.0" prefHeight="33.0" prefWidth="185.0" />
+            <DatePicker fx:id="dateFinConge" layoutX="422.0" layoutY="240.0" prefHeight="33.0" prefWidth="185.0" />
+            <Label layoutX="225.0" layoutY="345.0" text="Motif de demande">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="motifDemandeConge" layoutX="422.0" layoutY="310.0" prefHeight="97.0" prefWidth="185.0" />
+            <Button layoutX="547.0" layoutY="484.0" mnemonicParsing="false" text="Envoyer">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="227.0" layoutY="434.0" prefHeight="33.0" prefWidth="156.0" text="Mail Destinataire">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="destinataireConge" layoutX="422.0" layoutY="434.0" prefHeight="33.0" prefWidth="185.0" />
+          <Button layoutX="213.0" layoutY="120.0" minWidth="64.0" mnemonicParsing="false" onAction="#voirTraitementConge" prefHeight="25.0" prefWidth="140.0" text="Demandes entrantes" />
+            <Button layoutX="564.0" layoutY="120.0" minWidth="63.0" mnemonicParsing="false" onAction="#voirReponseConge" prefHeight="25.0" text="Réponse">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
